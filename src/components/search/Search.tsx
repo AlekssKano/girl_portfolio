@@ -22,6 +22,8 @@ const StyledSearch = styled.label`
     border-color: #706363;
    padding-left: 10px;
     padding-right: 10px;
+    min-width: 110px;
+    min-height: 41px;
 
 `
 const StyledInput = styled.input`
