@@ -1,8 +1,6 @@
 import React from 'react';
-import {SectionTitle} from "../../../components/SectionTitle";
 import photo from "../../../assets/images/photoJPEG/giri1.webp";
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
 import {Icon} from "../../../components/icon/Icon";
 import {Container} from "../../../components/Container";
@@ -66,16 +64,15 @@ export const Works = () => {
                             <li>Commintments</li>
                         </ListItems>
                     </WorksText>
-                    <PhotoItem>
-                        <div>
-                                <Icon iconId={"orangeClock"} width={'80'} height={'80'} viewBox={'0 0 80 80'}/>
-                                <Icon iconId={"blackClock"} width={'80'} height={'80'} viewBox={'0 0 80 80'}/>
+                    <PhotoItems>
+                        <Clock>
+                            <Icon iconId={"Clock"} width={'97'} height={'85'} viewBox={'0 0 97 85'}/>
                             <ClockText>
                                 <span>24 Hour</span>
                                 <p>Lorem <span>ipsum</span> <span>dolor</span> sit amet, </p>
                             </ClockText>
-                        </div>
-                        <div><Icon iconId={"GreenSign"} width={'80'} height={'80'} viewBox={'0 0 80 80'}/></div>
+                        </Clock>
+                        <GreenSign><Icon iconId={"GreenSign"} width={'80'} height={'80'} viewBox={'0 0 80 80'}/></GreenSign>
                         <Clear>
                             <h3>
                                 Clear
@@ -83,7 +80,7 @@ export const Works = () => {
                             <p>Lorem <span>ipsum</span> <span>dolor</span> sit amet, </p>
                         </Clear>
                         <Photo src={photo} alt=""/>
-                    </PhotoItem>
+                    </PhotoItems>
 
 
                 </GridWork>
@@ -94,7 +91,7 @@ export const Works = () => {
 const StyledWorks = styled.section`
 
     background-color: rgb(240, 246, 246);
-    padding-bottom: 58px;
+    
 `
 const GridWork = styled.div`
     display: grid;
@@ -145,18 +142,20 @@ const Clear = styled.div`
     height: 102px;
     box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.13);
     background: #fff;
-     position: absolute;
-    
+    position: absolute;
+
     right: 30px;
     bottom: 500px;
     z-index: 0;
     text-align: center;
-    h3{
+
+    h3 {
         font-weight: 700;
         font-size: 24px;
         color: rgba(65, 57, 57, 0.85);
         padding-top: 15px;
     }
+
     p {
 
         font-weight: 400;
@@ -180,61 +179,41 @@ const Clear = styled.div`
                 color: ${theme.colors.secondary};
 
             }
-            
+
         }
+
         padding-left: 38px;
         padding-right: 23px;
     }
-    
-    
+
+
 `
-const PhotoItem = styled.div`
-    grid-area: PhotoItem;
-    display: flex;
+const GreenSign = styled.div`
+position: absolute;
+    right: 50px;
+    bottom: 380px;
+`
+const Clock = styled.div`
+   display: flex;
     justify-content: center;
-    align-items: end;
-    position: relative;
+    align-items: center;
+    flex-direction: column;
+        border: 5px solid #f0eefc;;
+        border-radius: 20px;
+        width: 175px;
+        height: 203px;
+        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.13);
+        background: rgb(255, 255, 255);
 
-    div {
-        &:first-child {
-            border: 5px solid #f0eefc;;
-            border-radius: 20px;
-            width: 175px;
-            height: 203px;
-            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.13);
-            background: rgb(255, 255, 255);
-
-            position: absolute;
-            right: 250px;
-            bottom: 140px;
-            z-index: 2;
-        }
-        &:nth-child(2){
-            position:absolute;
-            right: 45px;
-            bottom: 390px;
-        }
-       
-
-    }
-   
-    
-}
-
-
-
+        position: absolute;
+        right: 250px;
+        bottom: 140px;
+        z-index: 2;
 `
-
-
-
-
-
-
-
 const ClockText = styled.div`
     text-align: center;
     padding: 0 16px 0 16px;
-   
+
 }
 
 span {
@@ -270,6 +249,17 @@ p {
         }
     }
 `
+const PhotoItems = styled.div `
+    grid-area: PhotoItem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+
+    
+`
+
+
 
 const WorksText = styled.div`
     display: flex;

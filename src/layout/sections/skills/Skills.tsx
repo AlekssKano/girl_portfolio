@@ -10,11 +10,12 @@ export const Skills = () => {
                 <h3>Programming language skill</h3>
                 <StyledIcons>
 
-                    <Icon iconId={"c_language"} width={'20'} height={'20'} viewBox={'0 0 20 20'}/>
-                    <Icon iconId={"python"} width={'25'} height={'25'} viewBox={'0 0 25 25'}/>
-                    <Icon iconId={"html"} width={'30'} height={'30'} viewBox={'0 0 30 30'}/>
-                    <Icon iconId={"ruby"} width={'50'} height={'50'} viewBox={'0 0 50 50'}/>
-                    <Icon iconId={"php"} width={'25'} height={'25'} viewBox={'0 0 25 25'}/>
+
+                    <div><Icon iconId={"c_language"} width={'20'} height={'20'} viewBox={'0 0 20 20'}/></div>
+                    <div><Icon iconId={"python"} width={'30'} height={'30'} viewBox={'0 0 28 28'}/></div>
+                    <div><Icon iconId={"html"} width={'30'} height={'30'} viewBox={'0 0 30 30'}/></div>
+                    <div><Icon iconId={"ruby"} width={'50'} height={'50'} viewBox={'0 0 50 50'}/></div>
+                    <div><Icon iconId={"php"} width={'25'} height={'25'} viewBox={'0 0 25 25'}/></div>
 
                 </StyledIcons>
             </Container>
@@ -37,10 +38,13 @@ const StyledIcons = styled.div`
     padding-top: 20px;
 
 
-    Icon {
-        &:first-child {
-            box-shadow: 0 -5px 10px 0 rgb(251, 0, 227)
-        }
+    div {
+        display: flex;
+        border-radius:50%;
+            //box-shadow: 3px 0 0 2px  rgb(251, 0, 227)
+        box-shadow: 6px 0 4px 0 rgba(0, 0, 0, 0.23);
+
+    }
 
     }
 

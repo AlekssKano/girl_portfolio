@@ -33,10 +33,10 @@ export const Main = () => {
                         <Smile>
                             <Icon iconId={"happyface"} width={'50'} height={'50'} viewBox={'5 0 80 80'}/>
 
-                            <span>UI/UX <br/> </span>
-                            <span>lorem ipsum dolor sit amet</span></Smile>
+                            <span><h3>UI/UX</h3><h4> lorem ipsum dolor sit amet</h4></span>
+                        </Smile>
                         <Search>
-                            <Icon iconId={"loupe"} width={'50'} height={'50'} viewBox={'0 0 50 50'}/>
+                            <Icon iconId={"loupe"} width={'30'} height={'30'} viewBox={'0 0 30 30'}/>
                             <span> User Research</span>
                         </Search>
                         <Award>
@@ -85,10 +85,13 @@ const NameText = styled.h2`
 const Smile = styled.div`
 
 
-    display: inline-block;
+    display: flex;
+   
     border-radius: 15px;
     padding: 10px;
-    width: 269px;
+    min-width: 290px;
+    max-width: 320px;
+    
     height: 73px;
 
     background-color: #ffffff;
@@ -96,29 +99,30 @@ const Smile = styled.div`
     box-shadow: 10px 10px 6px 0 rgba(0, 0, 0, 0.13);
 
     flex-direction: row;
+    flex-wrap: wrap;
     position: absolute;
 
     top: 180px;
     left: -130px;
-    flex-wrap: nowrap;
+    white-space: nowrap;
 
     span {
         //width: 90%;
-
-        &:first-child {
+white-space: nowrap;
+        h3 {
             font-weight: 600;
             font-size: 14px;
             color: #413939;
         }
 
-        &:last-child {
+        h4 {
             font-weight: 400;
             color: rgba(65, 57, 57, 0.56);
         }
 
-        box-sizing: border-box;
-        width: auto;
-        max-width: 100%;
+        //box-sizing: border-box;
+        //width: auto;
+        //max-width: 100%;
 
     }
 
@@ -127,7 +131,7 @@ const Smile = styled.div`
 `
 const Search = styled.div`
 
-    display: inline-block;
+    display: flex;
     border-radius: 15px;
     padding: 16px 24px;
     width: 192px;
@@ -150,14 +154,15 @@ const Search = styled.div`
 `
 const Award = styled.div`
     
-        display: inline-block;
+        display: flex;
         border-radius: 10px;
         width: 140px;
         height: 56px;
         background-color: #ffffff;
         border: 1px solid #cd89c6;
         box-shadow: 10px 10px 6px 0 rgba(0, 0, 0, 0.13);
-
+justify-content: center;
+    align-items: center;
 
         position: absolute;
         right: -535px;

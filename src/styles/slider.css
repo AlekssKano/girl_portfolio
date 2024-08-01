@@ -1,0 +1,12 @@
+.alice-carousel__dots {
+    display: none;
+}
+.alice-carousel__prev-btn-item, .alice-carousel__next-btn-item {
+    display: none ;
+}
+/*.element.style {*/
+/*width: 490px;*/
+/*}*/
+.alice-carousel__stage-item {
+    margin: 0 35px;
+}

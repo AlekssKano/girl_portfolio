@@ -1,44 +1,108 @@
 import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import styled from "styled-components";
-import project1 from "./../../../assets/images/photoJPEG/poject1.webp"
-import project2 from "./../../../assets/images/photoJPEG/project2.webp.webp"
-import slider1 from "../../../assets/images/photoJPEG/slider1.webp";
-import slider2 from "../../../assets/images/photoJPEG/slider2.webp";
+import {Container} from "../../../components/Container";
 import {SectionTitle} from "../../../components/SectionTitle";
-import {FlexWrapper} from "../../../components/FlexWrapper";
+import slider1 from "../../../assets/images/photoJPEG/project1.webp";
+import slider2 from "../../../assets/images/photoJPEG/project2.webp";
+import './../../../styles/slider.css'
 
-export const RecentProject = () => {
-    return (
-        <StyledProject>
-            <SectionTitle>Recent Project</SectionTitle>
-           <StyledPhoto>
-               <Photo src={slider1} alt=""/>
-               <Photo src={slider2} alt=""/>
-           </StyledPhoto>
-
-
-
-        </StyledProject>
-    );
+const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 2 },
 };
-const StyledPhoto = styled.section`
-    border: 1px solid red;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #f1bcdc;
-`
-const StyledProject = styled.section`
-    background-color: #f1bcdc;
-    
-`
 const Photo = styled.img`
-    width: 460px;
-    height: 481px;
+    width: 481px;
+    height: 460px;
     object-fit: cover;
     border-radius: 20px;
     transform: rotate(90deg);
-  
-
 `
+const StyledPhoto = styled.div`
+    //border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(135, 115, 238, 0.12);
+    box-shadow: 10px 10px 6px 0 rgba(0, 0, 0, 0.13);
+    border-radius: 18px;
+    width: 565px;
+    height: 540px;
+    
+`
+type SlidePropsType = {
+    sliderNumber: string;
+}
+const Project =(props: SlidePropsType) =>{
+    return (
+        <StyledProject>
+
+            <StyledPhoto><Photo src={props.sliderNumber} alt=""/> </StyledPhoto>
+        </StyledProject>
+    );
+}
+const items = [
+    <div className="item" data-value="1"><Project sliderNumber={slider1}/></div>,
+    <div className="item" data-value="2"> <Project sliderNumber={slider2}/></div>,
+    <div className="item" data-value="3"><Project sliderNumber={slider1}/></div>,
+    <div className="item" data-value="4"><Project sliderNumber={slider2}/></div>,
+
+
+
+
+];
+
+export const RecentProject = () => (
+    <StyledProject>
+        <Container>
+            <SectionTitle>Recent Project</SectionTitle>
+            <AliceCarousel
+                mouseTracking
+                items={items}
+                responsive={responsive}
+                controlsStrategy="alternate"
+            />
+        </Container>
+    </StyledProject>
+
+
+);
+
+
+// import React from 'react';
+
+
+// import {SectionTitle} from "../../../components/SectionTitle";
+// import {FlexWrapper} from "../../../components/FlexWrapper";
+//
+// export const RecentProject = () => {
+//     return (
+//         <StyledProject>
+//             <SectionTitle>Recent Project</SectionTitle>
+//            <StyledPhoto>
+//                <Photo src={slider1} alt=""/>
+//                <Photo src={slider2} alt=""/>
+//            </StyledPhoto>
+//
+//
+//
+//         </StyledProject>
+//     );
+// };
+
+const StyledProject = styled.section`
+    background-color: #e6dce3;
+    //border: 1px solid #cf1313;
+   // padding: 35px;
+
+ 
+}
+
+
+
+
+//
+// `
