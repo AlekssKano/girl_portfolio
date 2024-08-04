@@ -25,10 +25,9 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-    background-color: rgba(147, 176, 197, 0.56);
     min-height: 100%;;
-    padding: 66px 0 70px 0;
-
+    padding: 0 0 70px 0;
+    //background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 70%), rgb(171, 204, 232, 70%));
 `
 const StyledIcons = styled.div`
     display: flex;

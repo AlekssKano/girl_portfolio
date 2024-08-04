@@ -72,37 +72,16 @@ export const RecentProject = () => (
 );
 
 
-// import React from 'react';
-
-
-// import {SectionTitle} from "../../../components/SectionTitle";
-// import {FlexWrapper} from "../../../components/FlexWrapper";
-//
-// export const RecentProject = () => {
-//     return (
-//         <StyledProject>
-//             <SectionTitle>Recent Project</SectionTitle>
-//            <StyledPhoto>
-//                <Photo src={slider1} alt=""/>
-//                <Photo src={slider2} alt=""/>
-//            </StyledPhoto>
-//
-//
-//
-//         </StyledProject>
-//     );
-// };
-
 const StyledProject = styled.section`
-    background-color: #e6dce3;
-    //border: 1px solid #cf1313;
-   // padding: 35px;
-
+    
+   div{
+   //rgba(248, 238, 215, 0%)
+   }
+    section{
+        
+        width: 97.5%;
+        border-radius: 18px;
+    }
  
-}
+`
 
-
-
-
-//
-// `

@@ -23,10 +23,10 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    background-color: rgba(180, 243, 230, 0.56);
+    //background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 90%), rgb(171, 204, 232, 90%));
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 5px 0;
     position: fixed;
     top: 0;
     left: 0;

@@ -57,13 +57,13 @@ export const Main = () => {
 };
 const StyledMain = styled.section`
     display: flex;
-    min-height: 100vh;
+    min-height: 60vh;
 
-    background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 70%), rgb(171, 204, 232, 70%));
+    //background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 70%), rgb(171, 204, 232, 70%));
     // background: linear-gradient(to right, white, rgba(149, 115, 39, 0.51), rgba(15, 144, 166, 0.16));
     justify-content: center;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 100px;
 
 
 `

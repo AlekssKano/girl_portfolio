@@ -59,14 +59,14 @@ export const Slider = () => (
 );
 
 
-const StyledSlider = styled.div`
-    border: 1px solid #f0f6f6;
+const StyledSlider = styled.section`
+   
     display: flex;
     flex-direction: row;
     align-items: center;
     //justify-content: space-around;
-    background-color: #F0F6F6FF;
-    padding-bottom: 114px;
+    background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 70%), rgb(171, 204, 232, 70%));
+   
 
 
 
