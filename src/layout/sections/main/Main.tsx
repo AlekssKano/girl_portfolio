@@ -7,14 +7,16 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {theme} from "../../../styles/Theme";
 import {Container} from "../../../components/Container";
 import happy from '../../../assets/images/happ_face.png';
+import {font} from "../../../styles/Common";
 
 export const Main = () => {
     return (
 
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-around'}>
-                    <TextBlock>
+                <FlexWrapper align={'center'} justify={'space-around'} wrap={"wrap"}>
+
+                        <TextBlock>
                         <NameText>Hy! I Am <br/> <Name>Bulam Gerhana</Name></NameText>
                         <SmallText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.
@@ -29,6 +31,7 @@ export const Main = () => {
                             <span> <Icon iconId={"visa"} width={'60'} height={'40'} viewBox={'0 0 60 40'}/></span>
                         </IconsDirection>
                     </TextBlock>
+
                     <PseudoWrapper>
                         <Smile>
                             <Icon iconId={"happyface"} width={'50'} height={'50'} viewBox={'5 0 80 80'}/>
@@ -45,7 +48,11 @@ export const Main = () => {
                         </Award>
 
                     </PseudoWrapper>
-                    <Photo src={photo} alt=""/>
+
+
+                        <Photo src={photo} alt=""/>
+
+
                 </FlexWrapper>
             </Container>
 
@@ -57,30 +64,41 @@ export const Main = () => {
 };
 const StyledMain = styled.section`
     display: flex;
-    min-height: 60vh;
-
+    //min-height: 60vh;
+min-height: 100vh;
     //background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 70%), rgb(171, 204, 232, 70%));
     // background: linear-gradient(to right, white, rgba(149, 115, 39, 0.51), rgba(15, 144, 166, 0.16));
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
     padding-top: 100px;
-
+    
+    
+    
+    
 
 `
+
 const Name = styled.h2`
     color: ${theme.colors.accent}
+    
+   
 `
 const SmallText = styled.p`
     font-weight: 400;
     font-size: 14px;
     color: rgba(65, 57, 57, 0.73);
     margin: 39px 0 28px 0;
+    width: 80%;
+    
 `
 const NameText = styled.h2`
-    font-weight: 700;
-    font-size: 48px;
     color: #413939;
-    line-height: 1;
+    ${font({family: '"Poppins", sans-serif', weight:700, Fmax:38, Fmin:24})}
+    //letter-spacing: 0.05em;
+    //margin: 10px 0;
+    text-align: left;
+
+
 `
 const Smile = styled.div`
 
@@ -125,7 +143,13 @@ white-space: nowrap;
         //max-width: 100%;
 
     }
-
+    @media ${theme.media.tablet}{
+        display: none;
+        top: 100px;
+        left: -220px;
+        //white-space: nowrap;
+    }
+    
 
 
 `
@@ -151,6 +175,17 @@ const Search = styled.div`
         letter-spacing: -0.03em;
         color: #413939;
     }
+    @media ${theme.media.tablet}{
+        top: 100px;
+        left: -150px;
+        //white-space: nowrap;
+    }
+
+    @media ${theme.media.mobile}{
+        top: 80px;
+        left: -200px;
+        //white-space: nowrap;
+    }
 `
 const Award = styled.div`
     
@@ -175,27 +210,58 @@ justify-content: center;
         color: #413939;
         
     }
+    @media ${theme.media.tablet}{
+        top: 10px;
+        left: -100px;
+        //white-space: nowrap;
+    } 
+    @media ${theme.media.tablet}{
+        top: 500px;
+        left: -150px;
+        //white-space: nowrap;
+    }
+  
 `
 const PseudoWrapper = styled.div`
     position: relative;
+    flex-wrap: wrap;
+   
+    
 `
+
 const Photo = styled.img`
-    max-width: 500px;
-    width: 100%;
+    //Width:498px;
+    //Height:571px;
+    width: 434px;
+    height: 516px;
     object-fit: cover;
-    object-position: center;
+    margin-right: 20px;
+    @media ${theme.media.tablet} {
 
+        width: 362px;
+        height: 478px;
 
-`
-
+    }`
+    
+    // @media ${theme.media.mobile} {
+    //
+    //     width: 270px;
+    //     height: 370px;
+    //
+    // }`
 const TextBlock = styled.p`
     display: flex;
     align-items: start;
     justify-content: flex-start;
     flex-direction: column;
+    width:50%;
+    @media ${theme.media.mobile}{
+        width:100%
+    }
 `
 const IconsDirection = styled.div`
     position: relative;
+    flex-wrap: nowrap;
 
     *,
     *::before,
@@ -217,6 +283,7 @@ const IconsDirection = styled.div`
 
 
             position: absolute;
+            flex-wrap: wrap;
             bottom: 0.5rem;
             z-index: -1;
             margin: 0;

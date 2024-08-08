@@ -44,10 +44,10 @@ const StyledMenu = styled.nav`
         justify-content: center;
         padding: 0;
         margin: 0;
-        //&:nth-child(2){
-        //    margin: 0 24px;
-        //}
         
+        @media ${theme.media.tablet} {
+            display: none;
+        }
     }
 
 `

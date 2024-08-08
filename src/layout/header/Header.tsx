@@ -5,6 +5,8 @@ import {Menu} from "../../components/menu/Menu";
 import {Search} from "../../components/search/Search";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
+import {theme} from "../../styles/Theme";
+import {MobileMenu} from "../../components/MobileMenu/MobileMenu";
 
 const items =["Home", "About", "Testimoni", "Contact"]
 
@@ -15,6 +17,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
                     <Menu menuItems={items}/>
+                    <MobileMenu menuItems={items}/>
                     <Search/>
                 </FlexWrapper>
             </Container>
@@ -23,7 +26,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    //background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 90%), rgb(171, 204, 232, 90%));
+    background: ${theme.colors.bgColor};
     display: flex;
     justify-content: space-between;
     padding: 5px 0;

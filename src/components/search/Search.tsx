@@ -1,6 +1,7 @@
 import React from 'react';
 import {Icon} from "../icon/Icon";
 import styled from "styled-components";
+import {theme} from "../../styles/Theme";
 
 export const Search = () => {
     return (
@@ -24,6 +25,10 @@ const StyledSearch = styled.label`
     padding-right: 10px;
     min-width: 110px;
     min-height: 41px;
+    
+    @media ${theme.media.tablet}{
+        display: none;
+    }
 
 `
 const StyledInput = styled.input`
