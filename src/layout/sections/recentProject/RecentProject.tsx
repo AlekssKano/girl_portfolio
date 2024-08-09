@@ -7,6 +7,8 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import slider1 from "../../../assets/images/photoJPEG/project1.webp";
 import slider2 from "../../../assets/images/photoJPEG/project2.webp";
 import './../../../styles/slider.css'
+import {theme} from "../../../styles/Theme";
+import photo from "../../../assets/images/photo_girl_3.png";
 
 const responsive = {
     0: { items: 1 },
@@ -83,5 +85,16 @@ const StyledProject = styled.section`
         border-radius: 18px;
     }
  
+`
+
+    
+
+
+const MobileRecentProject = styled.div`
+display: none;
+    @media${theme.media.mobile}{
+        display: flex;
+        
+    }
 `
 

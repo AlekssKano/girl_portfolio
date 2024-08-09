@@ -11,8 +11,8 @@ import slider4 from "./../../../assets/images/photoJPEG/slider4.webp"
 import slider5 from "./../../../assets/images/photoJPEG/slider5.webp"
 
 const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
+    0: { items: 2 },
+    568: { items: 3 },
     768: { items: 3 },
     1024: { items: 4 },
 };

@@ -5,12 +5,14 @@ import {Button} from "../../../components/Button";
 import {Icon} from "../../../components/icon/Icon";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Works = () => {
     return (
         <StyledWorks>
             <Container>
                 <GridWork>
+                    {/*<GridWorkTablet>*/}
                     <ServiceText>
                         <WorkTitle>My awasome <br/><Accent>Service</Accent></WorkTitle>
                         <StyledTextService>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -72,7 +74,8 @@ export const Works = () => {
                                 <p>Lorem <span>ipsum</span> <span>dolor</span> sit amet, </p>
                             </ClockText>
                         </Clock>
-                        <GreenSign><Icon iconId={"GreenSign"} width={'80'} height={'80'} viewBox={'0 0 80 80'}/></GreenSign>
+                        <GreenSign><Icon iconId={"GreenSign"} width={'80'} height={'80'}
+                                         viewBox={'0 0 80 80'}/></GreenSign>
                         <Clear>
                             <h3>
                                 Clear
@@ -82,7 +85,7 @@ export const Works = () => {
                         <Photo src={photo} alt=""/>
                     </PhotoItems>
 
-
+                    {/*</GridWorkTablet>*/}
                 </GridWork>
             </Container>
         </StyledWorks>
@@ -91,7 +94,7 @@ export const Works = () => {
 const StyledWorks = styled.section`
 
     background: linear-gradient(to right, #f8e9e9, rgba(248, 238, 215, 70%), rgb(171, 204, 232, 70%));
-    
+
 `
 const GridWork = styled.div`
     display: grid;
@@ -107,25 +110,39 @@ const GridWork = styled.div`
 "BantDesign BantDesign ServiceText"
 "UIDesign DeveloperDesign ServiceText"
 "UIDesign DeveloperDesign PhotoItem"
-"WorksText WorksText PhotoItem"
+"WorksText WorksText PhotoItem";
+
+    @media ${theme.media.mobile} {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
 
+`
+const GridWorkTablet = styled.div`
 `
 const WorkTitle = styled.h2`
     color: ${theme.colors.font};
 
-    font-weight: 700;
-    font-size: 48px;
-    text-align: left;
+    // font-weight: 700;
+    // font-size: 48px;
+    // text-align: left;
+        // @media ${theme.media.tablet} {
+    //    
+    // }
 
 `
 const StyledTextService = styled.p`
     text-align: left;
     font-weight: 400;
     font-size: 14px;
-    color: ${theme.colors.font};
+    color: rgba(65, 57, 57, 0.73);
+
     padding-top: 28px;
     padding-bottom: 18px;
+    width: 95%;
 `
 const SkillsTitle = styled.h3`
 `
@@ -186,29 +203,44 @@ const Clear = styled.div`
         padding-right: 23px;
     }
 
-
+    @media ${theme.media.tablet}{
+        position: absolute;
+        right: 30px;
+        bottom: 550px;
+    }
+    @media ${theme.media.mobile}{
+        position: absolute;
+        right: 30px;
+        bottom: 480px;
+    }
 `
 const GreenSign = styled.div`
-position: absolute;
+    position: absolute;
     right: 50px;
     bottom: 380px;
 `
 const Clock = styled.div`
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-        border: 5px solid #f0eefc;;
-        border-radius: 20px;
-        width: 175px;
-        height: 203px;
-        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.13);
-        background: rgb(255, 255, 255);
+    border: 5px solid #f0eefc;;
+    border-radius: 20px;
+    width: 175px;
+    height: 203px;
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.13);
+    background: rgb(255, 255, 255);
 
+    position: absolute;
+    right: 250px;
+    bottom: 140px;
+    z-index: 2;
+
+    @media ${theme.media.tablet}{
         position: absolute;
-        right: 250px;
-        bottom: 140px;
-        z-index: 2;
+        right: 150px;
+        bottom: 120px;
+    }
 `
 const ClockText = styled.div`
     text-align: center;
@@ -249,16 +281,15 @@ p {
         }
     }
 `
-const PhotoItems = styled.div `
+const PhotoItems = styled.div`
     grid-area: PhotoItem;
     display: flex;
     justify-content: center;
     align-items: end;
     position: relative;
 
-    
-`
 
+`
 
 
 const WorksText = styled.div`
@@ -266,6 +297,8 @@ const WorksText = styled.div`
     flex-direction: column;
     justify-content: start;
     grid-area: WorksText;
+    ${font({family: '"Poppins", sans-serif', weight: 700, Fmax: 38, Fmin: 24})}
+    width: 94%;
 
     p {
         font-weight: 400;
@@ -274,6 +307,7 @@ const WorksText = styled.div`
         padding: 24px 0 40px 0;
 
     }
+
 
 `
 const TitleWorksText = styled.h1`
@@ -295,6 +329,8 @@ const ListItems = styled.ol`
     font-size: 24px;
     color: rgba(65, 57, 57, 0.71);
     padding-left: 30px;
+
+
 `
 
 
@@ -335,6 +371,12 @@ const BantDesign = styled.div`
 
 
         }
+    }
+
+    @media ${theme.media.tablet} {
+        height: 282px;
+        width: 360px;
+
     }
 
 `
@@ -385,6 +427,11 @@ const UIDesign = styled.div`
         }
     }
 
+    @media ${theme.media.tablet} {
+        width: 200px;
+        height: 406px;
+    }
+
 `
 const DeveloperDesign = styled.div`
     border-radius: 18px;
@@ -423,6 +470,12 @@ const DeveloperDesign = styled.div`
 
         }
     }
+
+    @media ${theme.media.tablet} {
+        width: 200px;
+        height: 406px;
+    }
+
 `
 const ItemText = styled.p`
     text-align: center;
@@ -438,6 +491,8 @@ const ServiceText = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    ${font({family: '"Poppins", sans-serif', weight: 700, Fmax: 38, Fmin: 24})}
+    width: 95%;
 
     ${Button} {
         border-radius: 10px;
